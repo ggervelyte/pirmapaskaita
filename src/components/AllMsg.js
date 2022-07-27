@@ -6,7 +6,7 @@ function AllMsg() {
     const allUsr = useSelector(state => state.users.value.messages)
   return (
     <div>
-        {allUsr.map((x, i) => <Msgs key={i} user={x} /> )}
+        {allUsr.map((x, i) => <Msgs key={i} user={x} index={i}/> )}
     </div>
   )
 }

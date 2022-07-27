@@ -36,10 +36,16 @@ export const userSlice = createSlice( {
                 message: payload.message
             }
             value.messages.push(message)
-       }
+       },
+       deleteMsg: ({value}, {payload}) => {
+            value.messages[payload] = []
+       },
+       updateMessages: ({value}, {payload}) => {
+            value.users = payload
+        }
     }
 })
 
-export const {addUser, updateImage, getCurrentUser, updatePassword, addMsg} = userSlice.actions
+export const {addUser, updateImage, getCurrentUser, updatePassword, addMsg, deleteMsg, updateMessages} = userSlice.actions
 
 export default userSlice.reducer

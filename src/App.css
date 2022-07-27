@@ -288,3 +288,12 @@ background: #232526;
     justify-content: right;
     flex-direction: row-reverse;
 }
+
+.remove {
+    display: flex;
+    gap: 25px;
+}
+
+.remove button {
+    cursor: pointer;
+}
