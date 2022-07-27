@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
+import RegisterPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import ProfilePage from './pages/ProfilePage';
+import UsersComp from './components/UsersComp';
+import Logo from './components/Logo';
+import SingleProfilePage from './pages/SingleProfilePage';
+import ConversationPage from './pages/ConversationPage';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="App" >       
+        <BrowserRouter>
+          <Logo />
+          <Routes>
+            <Route path='/' element={<LandingPage/>} />
+            <Route path='/register' element={<RegisterPage/>} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/profile' element={<ProfilePage />} />
+            <Route path='/allusers' element={<UsersComp/>} />
+            <Route path='/profile/:id' element={<SingleProfilePage/>} />
+            <Route path='/conversations' element={<ConversationPage/>} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+
+  )
 }
 
 export default App;
